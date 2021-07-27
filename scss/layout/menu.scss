@@ -1,0 +1,97 @@
+/*-- Section Menu -------------------------------------------------------------*/
+
+.photo_menu_container {
+  object-fit: cover;
+}
+
+#section_menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -30px;
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  background-color: rgb(246, 246, 246);
+}
+
+.container_titre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-family: "Shrikhand";
+  font-size: 24px;
+  margin: 0;
+}
+
+.fa-heart {
+  font-size: 24px;
+}
+
+#container_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+
+h6 {
+  margin: 10px 0px;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.container_bouttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 10px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.35) 0px 8px 24px;
+  padding: 10px 10px;
+  margin: 0;
+  font-weight: 100;
+  .nom-plat {
+    font-weight: 400;
+  }
+}
+
+.container_description_prix {
+  display: flex;
+  justify-content: space-between;
+  .description-plat {
+    font-size: 14px;
+  }
+  .prix {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.btn-stylé {
+  align-self: center;
+  margin: 20px 0;
+  border: none;
+  padding: 15px 50px;
+  border-radius: 50px;
+  background-color: #ff79da;
+  color: white;
+  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+main {
+  background-color: rgb(246, 246, 246);
+}
