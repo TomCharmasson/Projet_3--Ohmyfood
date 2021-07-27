@@ -1,0 +1,32 @@
+/*-- Section Titres -----------------------------------------------------------------*/
+
+#section_titres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(246, 246, 246);
+  padding: 40px 20px;
+}
+
+h1 {
+  margin: 0px;
+  font-weight: 500;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+#boutton_explorez_nos_restaurants {
+  margin: 20px 0;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50px;
+  background-color: #ff79da;
+  color: white;
+  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

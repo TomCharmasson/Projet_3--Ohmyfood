@@ -1,0 +1,14 @@
+/*-- Section Lieu -------------------------------------------------------------------*/
+
+#section_lieu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(234, 234, 234);
+  padding: 15px 20px;
+  box-shadow: inset 0px 3px 3px rgb(204, 204, 204);
+}
+
+#section_lieu p {
+  margin: 0 15px;
+}

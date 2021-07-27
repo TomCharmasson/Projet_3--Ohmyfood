@@ -1,0 +1,27 @@
+/*-- Section Fonctionnement ---------------------------------------------------------*/
+
+#section_fonctionnement {
+  padding: 20px;
+  padding-bottom: 60px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+#container_bouttons_fonctionnement {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+
+.bouttons_fonctionnement {
+  border: none;
+  padding: 25px 20px;
+  border-radius: 20px;
+  background-color: rgb(246, 246, 246);
+  color: black;
+  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
