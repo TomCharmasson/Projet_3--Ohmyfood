@@ -40,8 +40,15 @@ h5 {
 
 h6 {
   margin: 10px 0px;
-  font-size: 18px;
-  font-weight: 100;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.subtitle_line {
+  width: 35px;
+  border-bottom: 3px solid $color-tertiary;
+  position: relative;
+  bottom: 5px;
 }
 
 .container_bouttons {
@@ -49,6 +56,7 @@ h6 {
   flex-direction: column;
   justify-content: space-between;
   row-gap: 10px;
+  margin-top: 5px;
   margin-bottom: 40px;
 }
 
@@ -63,8 +71,12 @@ h6 {
   padding: 10px 10px;
   margin: 0;
   font-weight: 100;
+  transition: 400ms;
   .nom-plat {
     font-weight: 400;
+  }
+  &:hover {
+    transform: scale(1.02);
   }
 }
 
@@ -80,16 +92,14 @@ h6 {
   }
 }
 
-.btn-stylé {
+#section_menu .btn-stylé {
   align-self: center;
-  margin: 20px 0;
-  border: none;
   padding: 15px 50px;
-  border-radius: 50px;
-  background-color: #ff79da;
-  color: white;
-  font-size: 16px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 400ms;
+  &:hover {
+    background: -webkit-linear-gradient(top, $color-secondary, $color-primary);
+    transform: translateY(0.2em);
+  }
 }
 
 main {
