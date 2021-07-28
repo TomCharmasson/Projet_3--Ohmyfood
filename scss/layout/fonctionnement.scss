@@ -3,6 +3,7 @@
 #section_fonctionnement {
   padding: 20px;
   padding-bottom: 60px;
+  background-color: white;
 }
 
 h3 {
@@ -16,7 +17,19 @@ h3 {
   row-gap: 20px;
 }
 
+.container_number_boutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .bouttons_fonctionnement {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-left: 11px;
   border: none;
   padding: 25px 20px;
   border-radius: 20px;
@@ -24,4 +37,19 @@ h3 {
   color: black;
   font-size: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.numbers {
+  padding: 2px 7px;
+  border-radius: 50px;
+  background-color: $color-primary;
+  color: white;
+  position: absolute;
+  left: -11px;
+}
+
+.icone_fonctionnement {
+  position: absolute;
+  left: 30px;
+  color: lighten(black, 40%);
 }

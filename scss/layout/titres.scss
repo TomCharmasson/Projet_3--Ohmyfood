@@ -20,13 +20,14 @@ h2 {
   font-weight: 100;
 }
 
-#boutton_explorez_nos_restaurants {
+.btn-stylé {
   margin: 20px 0;
   border: none;
   padding: 15px 20px;
   border-radius: 50px;
-  background-color: #ff79da;
   color: white;
   font-size: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: -webkit-linear-gradient(top, $color-secondary, $color-primary);
+  cursor: pointer;
 }
