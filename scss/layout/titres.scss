@@ -30,4 +30,8 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background: -webkit-linear-gradient(top, $color-secondary, $color-primary);
   cursor: pointer;
+  transition: 400ms;
+  &:hover {
+    transform: scale(1.1);
+  }
 }

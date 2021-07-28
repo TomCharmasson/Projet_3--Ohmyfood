@@ -100,6 +100,10 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background: -webkit-linear-gradient(top, #ff79da, #9356dc);
   cursor: pointer;
+  transition: 400ms;
+}
+.btn-stylé:hover {
+  transform: scale(1.1);
 }
 
 /*-- Section Fonctionnement ---------------------------------------------------------*/
@@ -256,7 +260,6 @@ h6 {
   transition: 400ms;
 }
 #section_menu .btn-stylé:hover {
-  background: -webkit-linear-gradient(top, #ff79da, #9356dc);
   transform: translateY(0.2em);
 }
 
@@ -283,6 +286,10 @@ article {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 400ms;
+}
+.restaurant:hover {
+  transform: scale(1.02);
 }
 
 .new_label {
@@ -335,7 +342,6 @@ h4 {
 }
 .fa-heart:hover {
   color: #9356dc;
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.1em);
 }
 

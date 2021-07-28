@@ -18,6 +18,10 @@ article {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 400ms;
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .new_label {
@@ -69,7 +73,6 @@ h4 {
   transition: 500ms;
   &:hover {
     color: $color-primary;
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
     transform: translateY(-0.1em);
   }
 }
