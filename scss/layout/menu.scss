@@ -40,8 +40,10 @@ h5 {
 
 h6 {
   margin: 10px 0px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
+  -webkit-animation: fadeInSub 1000ms backwards;
+  animation: fadeInSub 1000ms backwards;
 }
 
 .subtitle_line {
@@ -49,6 +51,8 @@ h6 {
   border-bottom: 3px solid $color-tertiary;
   position: relative;
   bottom: 5px;
+  -webkit-animation: fadeInSub 1000ms backwards;
+  animation: fadeInSub 1000ms backwards;
 }
 
 .container_bouttons {
@@ -59,6 +63,9 @@ h6 {
   margin-top: 5px;
   margin-bottom: 40px;
 }
+
+$btn-anim-dur: 1000ms;
+$btn-anim-delay: $btn-anim-dur / 9;
 
 .btn {
   display: flex;
@@ -72,6 +79,17 @@ h6 {
   margin: 0;
   font-weight: 100;
   transition: 400ms;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: $btn-anim-dur;
+  animation-duration: $btn-anim-dur;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  @for $i from 1 to 9 {
+    &--#{$i} {
+      animation-delay: $btn-anim-delay * $i;
+    }
+  }
   .nom-plat {
     font-weight: 400;
   }
@@ -95,10 +113,6 @@ h6 {
 #section_menu .btn-stylé {
   align-self: center;
   padding: 15px 50px;
-  transition: 400ms;
-  &:hover {
-    transform: translateY(0.2em);
-  }
 }
 
 main {

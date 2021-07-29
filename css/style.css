@@ -29,6 +29,48 @@ p {
   margin: 8px 0;
 }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInSub {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInSub {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*-- Header -------------------------------------------------------------------------*/
 header {
   display: flex;
@@ -65,8 +107,19 @@ header img {
   box-shadow: inset 0px 3px 3px #cccccc;
 }
 
-#section_lieu p {
+#lieu {
+  background-color: #eaeaea;
+  border: none;
   margin: 0 15px;
+  font-family: "Roboto";
+  font-size: 18px;
+  text-align: center;
+  transition-duration: 300ms;
+}
+#lieu:focus {
+  outline: none;
+  border-radius: 20px;
+  background-color: white;
 }
 
 /*-- Section Titres -----------------------------------------------------------------*/
@@ -103,7 +156,9 @@ h2 {
   transition: 400ms;
 }
 .btn-stylé:hover {
-  transform: scale(1.1);
+  transform: translateY(-0.1em);
+  opacity: 85%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 15px;
 }
 
 /*-- Section Fonctionnement ---------------------------------------------------------*/
@@ -142,8 +197,14 @@ h3 {
   border-radius: 20px;
   background-color: #f6f6f6;
   color: black;
+  font-family: "Roboto";
   font-size: 16px;
+  font-weight: 400;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition-duration: 300ms;
+}
+.bouttons_fonctionnement:hover {
+  transform: scale(1.02);
 }
 
 .numbers {
@@ -202,8 +263,10 @@ h5 {
 
 h6 {
   margin: 10px 0px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
+  -webkit-animation: fadeInSub 1000ms backwards;
+  animation: fadeInSub 1000ms backwards;
 }
 
 .subtitle_line {
@@ -211,6 +274,8 @@ h6 {
   border-bottom: 3px solid #99e2d0;
   position: relative;
   bottom: 5px;
+  -webkit-animation: fadeInSub 1000ms backwards;
+  animation: fadeInSub 1000ms backwards;
 }
 
 .container_bouttons {
@@ -234,6 +299,36 @@ h6 {
   margin: 0;
   font-weight: 100;
   transition: 400ms;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.btn--1 {
+  animation-delay: 111.1111111111ms;
+}
+.btn--2 {
+  animation-delay: 222.2222222222ms;
+}
+.btn--3 {
+  animation-delay: 333.3333333333ms;
+}
+.btn--4 {
+  animation-delay: 444.4444444444ms;
+}
+.btn--5 {
+  animation-delay: 555.5555555556ms;
+}
+.btn--6 {
+  animation-delay: 666.6666666667ms;
+}
+.btn--7 {
+  animation-delay: 777.7777777778ms;
+}
+.btn--8 {
+  animation-delay: 888.8888888889ms;
 }
 .btn .nom-plat {
   font-weight: 400;
@@ -257,10 +352,6 @@ h6 {
 #section_menu .btn-stylé {
   align-self: center;
   padding: 15px 50px;
-  transition: 400ms;
-}
-#section_menu .btn-stylé:hover {
-  transform: translateY(0.2em);
 }
 
 main {
@@ -349,6 +440,7 @@ h4 {
 footer {
   display: flex;
   flex-direction: column;
+  row-gap: 5px;
   background-color: #353535;
   color: white;
   padding: 20px;
@@ -371,6 +463,17 @@ footer h5 {
 
 .fa-hands-helping {
   margin-right: 8px;
+}
+
+footer a {
+  padding: 5px 0;
+  width: fit-content;
+  color: white;
+  transition: 200ms;
+}
+footer a:hover {
+  border-left: 3px solid #9356dc;
+  padding-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
