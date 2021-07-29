@@ -69,8 +69,8 @@ h4 {
 
 .fa-heart {
   padding: 10px;
-  cursor: default;
-  transition: 500ms;
+  cursor: pointer;
+  transition: 400ms;
   &:hover {
     color: $color-primary;
     transform: translateY(-0.1em);

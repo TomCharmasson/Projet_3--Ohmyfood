@@ -428,8 +428,8 @@ h4 {
 
 .fa-heart {
   padding: 10px;
-  cursor: default;
-  transition: 500ms;
+  cursor: pointer;
+  transition: 400ms;
 }
 .fa-heart:hover {
   color: #9356dc;
@@ -468,7 +468,6 @@ footer h5 {
 footer a {
   padding: 5px 0;
   width: fit-content;
-  color: white;
   transition: 200ms;
 }
 footer a:hover {
