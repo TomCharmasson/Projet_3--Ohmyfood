@@ -46,3 +46,15 @@
     opacity: 1;
   }
 }
+
+// Icone coeur
+
+@keyframes fill {
+  from {
+    transform-origin: bottom center;
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

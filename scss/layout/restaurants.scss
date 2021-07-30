@@ -67,12 +67,33 @@ h4 {
   font-weight: 300;
 }
 
-.fa-heart {
+.container_titre {
+  position: relative;
+}
+
+.heart {
+  font-size: 24px;
   padding: 10px;
   cursor: pointer;
   transition: 400ms;
+  position: absolute;
+  right: 0;
+  z-index: 2;
   &:hover {
     color: $color-primary;
-    transform: translateY(-0.1em);
   }
+  &:hover + .heart_full {
+    color: $color-primary;
+    animation: fill 400ms ease-in-out forwards;
+    z-index: 1;
+  }
+}
+
+.heart_full {
+  color: transparent;
+  font-size: 24px;
+  margin: 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
 }

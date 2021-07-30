@@ -1,5 +1,9 @@
 /*-- Section Menu -------------------------------------------------------------*/
 
+main {
+  background-color: rgb(246, 246, 246);
+}
+
 .photo_menu_container {
   object-fit: cover;
 }
@@ -25,10 +29,6 @@ h5 {
   font-family: "Shrikhand";
   font-size: 24px;
   margin: 0;
-}
-
-.fa-heart {
-  font-size: 24px;
 }
 
 #container_menu {
@@ -110,11 +110,19 @@ $btn-anim-delay: $btn-anim-dur / 9;
   }
 }
 
+.check {
+  display: none;
+  color: transparent;
+}
+
+.btn > .check {
+  &:hover {
+    display: flex;
+    color: $color-tertiary;
+  }
+}
+
 #section_menu .btn-stylé {
   align-self: center;
   padding: 15px 50px;
-}
-
-main {
-  background-color: rgb(246, 246, 246);
 }
