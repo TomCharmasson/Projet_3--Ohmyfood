@@ -31,6 +31,144 @@ h5 {
   margin: 0;
 }
 
+/*
+.empty_heart {
+  position: absolute;
+  font-size: 22px;
+  right: 0;
+  margin-right: 10px;
+  padding: 5px;
+  z-index: 1;
+  cursor: pointer;
+  &:active {
+    animation: clic 400ms;
+  }
+}
+
+@keyframes clic {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.empty_heart:active {
+  & + .full_heart {
+    position: absolute;
+    right: 0;
+    font-size: 22px;
+    margin-right: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background-button;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    outline: 0;
+    overflow: none; // Set to none to see fill square outside box 
+    &.full_heart::before {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &.full_heart::after {
+      content: "";
+      position: absolute;
+      bottom: -50%; // Center sauare
+      left: -50%; // Center sauare
+      height: 200%;
+      width: 200%;
+      background-color: rgb(246, 246, 246);
+      border-radius: 35%; // Smooth edges to appear like liquid
+      animation: spin 4s ease-in-out forwards; // Set to forwards to freeze on last frame
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100%) rotate(400deg);
+  }
+}
+*/
+
+.full_heart {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: -webkit-linear-gradient($color-secondary, $color-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  height: 16px;
+  width: 16px;
+  background-color: rgb(246, 246, 246);
+}
+
+.empty_heart_fade {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  color: black;
+}
+
+.empty_heart {
+  z-index: 4;
+  position: relative;
+  &:active > .empty_heart_fade {
+    animation: clic 400ms;
+  }
+  &:active > .box {
+    animation: boxmove 400ms forwards;
+  }
+}
+
+@keyframes boxmove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes clic {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
 #container_menu {
   display: flex;
   flex-direction: column;
