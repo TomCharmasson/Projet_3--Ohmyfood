@@ -71,13 +71,28 @@ p {
     opacity: 1;
   }
 }
-@keyframes fill {
-  from {
-    transform-origin: bottom center;
-    transform: scale(0);
+@keyframes heart-fade {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: scale(1);
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes heart-fill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes boxmove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
   }
 }
 /*-- Header -------------------------------------------------------------------------*/
@@ -264,6 +279,7 @@ h5 {
 }
 
 .full_heart {
+  font-size: 22px;
   z-index: 1;
   position: relative;
   background: -webkit-linear-gradient(#ff79da, #9356dc);
@@ -271,58 +287,42 @@ h5 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+  margin-right: 15px;
+}
+
+#conteneur_restaurants .box {
+  background: -webkit-linear-gradient(white, transparent);
+}
+
+.box {
+  z-index: 2;
+  position: absolute;
+  background: -webkit-linear-gradient(#f6f6f6, transparent);
+  overflow: hidden;
+  right: 0;
+  height: 22px;
+  width: 22px;
+  margin-right: 15px;
 }
 
 .empty_heart {
-  z-index: 2;
+  font-size: 22px;
+  z-index: 3;
   position: absolute;
   right: 0;
+  margin-right: 15px;
+  cursor: pointer;
 }
 .empty_heart:hover {
-  animation: heart-fade 400ms both;
+  animation: heart-fade 800ms both;
 }
 .empty_heart:hover + .full_heart {
   animation: heart-fill 400ms both;
 }
-
-@keyframes heart-fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes heart-fill {
-  0% {
-    transform-origin: bottom right;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/*
-@keyframes boxmove {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+.empty_heart:hover ~ .box {
+  animation: boxmove 600ms ease-in-out both;
 }
 
-@keyframes clic {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-}
-*/
 #container_menu {
   display: flex;
   flex-direction: column;
@@ -358,8 +358,8 @@ h6 {
 
 .btn {
   display: flex;
-  flex-direction: column;
-  row-gap: 5px;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
@@ -399,33 +399,32 @@ h6 {
 .btn--8 {
   animation-delay: 1777.7777777778ms;
 }
-.btn .nom-plat {
-  font-weight: 400;
-}
 .btn:hover {
   transform: scale(1.02);
 }
 
 .container_description_prix {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+.container_description_prix .nom-plat {
+  font-weight: 400;
 }
 .container_description_prix .description-plat {
   font-size: 14px;
 }
-.container_description_prix .prix {
+
+.container_prix {
+  display: flex;
+}
+.container_prix .prix {
   font-size: 14px;
   font-weight: 400;
 }
-
-.check {
-  display: none;
-  color: transparent;
-}
-
-.btn > .check:hover {
-  display: flex;
-  color: #99e2d0;
+.container_prix .check {
+  background-color: #99e2d0;
+  padding: 55px;
 }
 
 #section_menu .btn-stylé {
@@ -505,31 +504,10 @@ h4 {
   position: relative;
 }
 
-.heart {
-  font-size: 24px;
-  padding: 10px;
-  cursor: pointer;
-  transition: 400ms;
-  position: absolute;
-  right: 0;
-  z-index: 2;
-}
-.heart:hover {
-  color: #9356dc;
-}
-.heart:hover + .heart_full {
-  color: #9356dc;
-  animation: fill 400ms ease-in-out forwards;
-  z-index: 1;
-}
-
-.heart_full {
-  color: transparent;
-  font-size: 24px;
-  margin: 10px;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
+.container_heart {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 /*-- Footer -------------------------------------------------------------------------*/
