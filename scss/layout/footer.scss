@@ -3,6 +3,7 @@
 footer {
   display: flex;
   flex-direction: column;
+  row-gap: 5px;
   background-color: rgb(53, 53, 53);
   color: white;
   padding: 20px;
@@ -25,4 +26,16 @@ footer h5 {
 
 .fa-hands-helping {
   margin-right: 8px;
+}
+
+footer a {
+  padding: 5px 0;
+  width: fit-content;
+  transition: 200ms;
+  color: white;
+  border: 0px solid $color-primary;
+  &:hover {
+    border-left: 3px solid $color-primary;
+    padding-left: 10px;
+  }
 }

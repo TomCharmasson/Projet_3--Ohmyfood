@@ -9,6 +9,17 @@
   box-shadow: inset 0px 3px 3px rgb(204, 204, 204);
 }
 
-#section_lieu p {
+#lieu {
+  background-color: rgb(234, 234, 234);
+  border: none;
   margin: 0 15px;
+  font-family: "Roboto";
+  font-size: 18px;
+  text-align: center;
+  transition-duration: 300ms;
+  &:focus {
+    outline: none;
+    border-radius: 20px;
+    background-color: white;
+  }
 }

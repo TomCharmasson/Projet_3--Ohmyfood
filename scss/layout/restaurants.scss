@@ -18,6 +18,10 @@ article {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 400ms;
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .new_label {
@@ -63,13 +67,33 @@ h4 {
   font-weight: 300;
 }
 
-.fa-heart {
+.container_titre {
+  position: relative;
+}
+
+.heart {
+  font-size: 24px;
   padding: 10px;
-  cursor: default;
-  transition: 500ms;
+  cursor: pointer;
+  transition: 400ms;
+  position: absolute;
+  right: 0;
+  z-index: 2;
   &:hover {
     color: $color-primary;
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.1em);
   }
+  &:hover + .heart_full {
+    color: $color-primary;
+    animation: fill 400ms ease-in-out forwards;
+    z-index: 1;
+  }
+}
+
+.heart_full {
+  color: transparent;
+  font-size: 24px;
+  margin: 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
 }

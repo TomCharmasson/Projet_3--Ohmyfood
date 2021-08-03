@@ -28,6 +28,12 @@ h2 {
   color: white;
   font-size: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background: -webkit-linear-gradient(top, $color-secondary, $color-primary);
+  background: $background-button;
   cursor: pointer;
+  transition: 400ms;
+  &:hover {
+    transform: translateY(-0.1em);
+    opacity: 85%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 15px;
+  }
 }

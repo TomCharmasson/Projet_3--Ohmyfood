@@ -29,6 +29,57 @@ p {
   margin: 8px 0;
 }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInSub {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInSub {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fill {
+  from {
+    transform-origin: bottom center;
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 /*-- Header -------------------------------------------------------------------------*/
 header {
   display: flex;
@@ -65,8 +116,19 @@ header img {
   box-shadow: inset 0px 3px 3px #cccccc;
 }
 
-#section_lieu p {
+#lieu {
+  background-color: #eaeaea;
+  border: none;
   margin: 0 15px;
+  font-family: "Roboto";
+  font-size: 18px;
+  text-align: center;
+  transition-duration: 300ms;
+}
+#lieu:focus {
+  outline: none;
+  border-radius: 20px;
+  background-color: white;
 }
 
 /*-- Section Titres -----------------------------------------------------------------*/
@@ -100,6 +162,12 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background: -webkit-linear-gradient(top, #ff79da, #9356dc);
   cursor: pointer;
+  transition: 400ms;
+}
+.btn-stylé:hover {
+  transform: translateY(-0.1em);
+  opacity: 85%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 15px;
 }
 
 /*-- Section Fonctionnement ---------------------------------------------------------*/
@@ -138,8 +206,14 @@ h3 {
   border-radius: 20px;
   background-color: #f6f6f6;
   color: black;
+  font-family: "Roboto";
   font-size: 16px;
+  font-weight: 400;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition-duration: 300ms;
+}
+.bouttons_fonctionnement:hover {
+  transform: scale(1.02);
 }
 
 .numbers {
@@ -158,6 +232,10 @@ h3 {
 }
 
 /*-- Section Menu -------------------------------------------------------------*/
+main {
+  background-color: #f6f6f6;
+}
+
 .photo_menu_container {
   object-fit: cover;
 }
@@ -185,10 +263,66 @@ h5 {
   margin: 0;
 }
 
-.fa-heart {
-  font-size: 24px;
+.full_heart {
+  z-index: 1;
+  position: relative;
+  background: -webkit-linear-gradient(#ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
 }
 
+.empty_heart {
+  z-index: 2;
+  position: absolute;
+  right: 0;
+}
+.empty_heart:hover {
+  animation: heart-fade 400ms both;
+}
+.empty_heart:hover + .full_heart {
+  animation: heart-fill 400ms both;
+}
+
+@keyframes heart-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes heart-fill {
+  0% {
+    transform-origin: bottom right;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*
+@keyframes boxmove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes clic {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+*/
 #container_menu {
   display: flex;
   flex-direction: column;
@@ -198,8 +332,10 @@ h5 {
 
 h6 {
   margin: 10px 0px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
+  -webkit-animation: fadeInSub 1000ms backwards;
+  animation: fadeInSub 1000ms backwards;
 }
 
 .subtitle_line {
@@ -207,6 +343,8 @@ h6 {
   border-bottom: 3px solid #99e2d0;
   position: relative;
   bottom: 5px;
+  -webkit-animation: fadeInSub 1000ms backwards;
+  animation: fadeInSub 1000ms backwards;
 }
 
 .container_bouttons {
@@ -230,6 +368,36 @@ h6 {
   margin: 0;
   font-weight: 100;
   transition: 400ms;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 2000ms;
+  animation-duration: 2000ms;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.btn--1 {
+  animation-delay: 222.2222222222ms;
+}
+.btn--2 {
+  animation-delay: 444.4444444444ms;
+}
+.btn--3 {
+  animation-delay: 666.6666666667ms;
+}
+.btn--4 {
+  animation-delay: 888.8888888889ms;
+}
+.btn--5 {
+  animation-delay: 1111.1111111111ms;
+}
+.btn--6 {
+  animation-delay: 1333.3333333333ms;
+}
+.btn--7 {
+  animation-delay: 1555.5555555556ms;
+}
+.btn--8 {
+  animation-delay: 1777.7777777778ms;
 }
 .btn .nom-plat {
   font-weight: 400;
@@ -250,18 +418,19 @@ h6 {
   font-weight: 400;
 }
 
+.check {
+  display: none;
+  color: transparent;
+}
+
+.btn > .check:hover {
+  display: flex;
+  color: #99e2d0;
+}
+
 #section_menu .btn-stylé {
   align-self: center;
   padding: 15px 50px;
-  transition: 400ms;
-}
-#section_menu .btn-stylé:hover {
-  background: -webkit-linear-gradient(top, #ff79da, #9356dc);
-  transform: translateY(0.2em);
-}
-
-main {
-  background-color: #f6f6f6;
 }
 
 /*-- Section Restaurants -------------------------------------------------------------*/
@@ -283,6 +452,10 @@ article {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 400ms;
+}
+.restaurant:hover {
+  transform: scale(1.02);
 }
 
 .new_label {
@@ -328,21 +501,42 @@ h4 {
   font-weight: 300;
 }
 
-.fa-heart {
-  padding: 10px;
-  cursor: default;
-  transition: 500ms;
+.container_titre {
+  position: relative;
 }
-.fa-heart:hover {
+
+.heart {
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 400ms;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+.heart:hover {
   color: #9356dc;
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.1em);
+}
+.heart:hover + .heart_full {
+  color: #9356dc;
+  animation: fill 400ms ease-in-out forwards;
+  z-index: 1;
+}
+
+.heart_full {
+  color: transparent;
+  font-size: 24px;
+  margin: 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
 }
 
 /*-- Footer -------------------------------------------------------------------------*/
 footer {
   display: flex;
   flex-direction: column;
+  row-gap: 5px;
   background-color: #353535;
   color: white;
   padding: 20px;
@@ -365,6 +559,18 @@ footer h5 {
 
 .fa-hands-helping {
   margin-right: 8px;
+}
+
+footer a {
+  padding: 5px 0;
+  width: fit-content;
+  transition: 200ms;
+  color: white;
+  border: 0px solid #9356dc;
+}
+footer a:hover {
+  border-left: 3px solid #9356dc;
+  padding-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
