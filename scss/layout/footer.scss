@@ -33,6 +33,7 @@ footer a {
   width: fit-content;
   transition: 200ms;
   color: white;
+  border: 0px solid $color-primary;
   &:hover {
     border-left: 3px solid $color-primary;
     padding-left: 10px;

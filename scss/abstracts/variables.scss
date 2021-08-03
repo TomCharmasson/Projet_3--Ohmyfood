@@ -7,3 +7,6 @@ $background-button: -webkit-linear-gradient(
   $color-secondary,
   $color-primary
 );
+
+$btn-anim-dur: 2000ms;
+$btn-anim-delay: $btn-anim-dur / 9;
