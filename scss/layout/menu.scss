@@ -32,6 +32,7 @@ h5 {
 }
 
 .full_heart {
+  font-size: 22px;
   z-index: 1;
   position: relative;
   background: -webkit-linear-gradient($color-secondary, $color-primary);
@@ -39,60 +40,45 @@ h5 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+  margin-right: 15px;
+}
+
+// Pour la page d'accueil
+
+#conteneur_restaurants .box {
+  background: -webkit-linear-gradient(white, transparent);
+}
+
+// Pour les menus
+
+.box {
+  z-index: 2;
+  position: absolute;
+  background: -webkit-linear-gradient(rgb(246, 246, 246), transparent);
+  overflow: hidden;
+  right: 0;
+  height: 22px;
+  width: 22px;
+  margin-right: 15px;
 }
 
 .empty_heart {
-  z-index: 2;
+  font-size: 22px;
+  z-index: 3;
   position: absolute;
   right: 0;
+  margin-right: 15px;
+  cursor: pointer;
   &:hover {
-    animation: heart-fade 400ms both;
+    animation: heart-fade 800ms both;
   }
   &:hover + .full_heart {
     animation: heart-fill 400ms both;
   }
-}
-
-@keyframes heart-fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+  &:hover ~ .box {
+    animation: boxmove 600ms ease-in-out both;
   }
 }
-
-@keyframes heart-fill {
-  0% {
-    transform-origin: bottom right;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/*
-@keyframes boxmove {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes clic {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-}
-*/
 
 #container_menu {
   display: flex;
@@ -128,14 +114,15 @@ h6 {
 }
 
 .btn {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  row-gap: 5px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
   background-color: white;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.35) 0px 8px 24px;
-  padding: 10px 10px;
   margin: 0;
   font-weight: 100;
   transition: 400ms;
@@ -150,35 +137,50 @@ h6 {
       animation-delay: $btn-anim-delay * $i;
     }
   }
-  .nom-plat {
-    font-weight: 400;
-  }
   &:hover {
     transform: scale(1.02);
   }
+  &:hover > .container_prix {
+    animation: checkbox 1s both alternate;
+  }
+  &:hover > .container_prix > .check > .fa-check-circle {
+    animation: rotate 1s both alternate;
+  }
 }
 
-.container_description_prix {
+.container_description {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  row-gap: 10px;
+  margin: 10px;
+  .nom-plat {
+    font-weight: 400;
+  }
   .description-plat {
     font-size: 14px;
   }
+}
+
+.container_prix {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  transform: translateX(60%);
   .prix {
     font-size: 14px;
     font-weight: 400;
+    padding: 10px;
   }
-}
-
-.check {
-  display: none;
-  color: transparent;
-}
-
-.btn > .check {
-  &:hover {
-    display: flex;
-    color: $color-tertiary;
+  .check {
+    background-color: $color-tertiary;
+    height: auto;
+    padding: 20px 20px;
+    color: white;
+    font-size: 1.5rem;
   }
 }
 

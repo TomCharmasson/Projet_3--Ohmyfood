@@ -71,13 +71,44 @@ p {
     opacity: 1;
   }
 }
-@keyframes fill {
-  from {
-    transform-origin: bottom center;
-    transform: scale(0);
+@keyframes heart-fade {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: scale(1);
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes heart-fill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes boxmove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(2turn);
+  }
+}
+@keyframes checkbox {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 /*-- Header -------------------------------------------------------------------------*/
@@ -264,6 +295,7 @@ h5 {
 }
 
 .full_heart {
+  font-size: 22px;
   z-index: 1;
   position: relative;
   background: -webkit-linear-gradient(#ff79da, #9356dc);
@@ -271,58 +303,42 @@ h5 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+  margin-right: 15px;
+}
+
+#conteneur_restaurants .box {
+  background: -webkit-linear-gradient(white, transparent);
+}
+
+.box {
+  z-index: 2;
+  position: absolute;
+  background: -webkit-linear-gradient(#f6f6f6, transparent);
+  overflow: hidden;
+  right: 0;
+  height: 22px;
+  width: 22px;
+  margin-right: 15px;
 }
 
 .empty_heart {
-  z-index: 2;
+  font-size: 22px;
+  z-index: 3;
   position: absolute;
   right: 0;
+  margin-right: 15px;
+  cursor: pointer;
 }
 .empty_heart:hover {
-  animation: heart-fade 400ms both;
+  animation: heart-fade 800ms both;
 }
 .empty_heart:hover + .full_heart {
   animation: heart-fill 400ms both;
 }
-
-@keyframes heart-fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes heart-fill {
-  0% {
-    transform-origin: bottom right;
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/*
-@keyframes boxmove {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+.empty_heart:hover ~ .box {
+  animation: boxmove 600ms ease-in-out both;
 }
 
-@keyframes clic {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-}
-*/
 #container_menu {
   display: flex;
   flex-direction: column;
@@ -357,14 +373,15 @@ h6 {
 }
 
 .btn {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  row-gap: 5px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
   background-color: white;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.35) 0px 8px 24px;
-  padding: 10px 10px;
   margin: 0;
   font-weight: 100;
   transition: 400ms;
@@ -399,33 +416,50 @@ h6 {
 .btn--8 {
   animation-delay: 1777.7777777778ms;
 }
-.btn .nom-plat {
-  font-weight: 400;
-}
 .btn:hover {
   transform: scale(1.02);
 }
+.btn:hover > .container_prix {
+  animation: checkbox 1s both alternate;
+}
+.btn:hover > .container_prix > .check > .fa-check-circle {
+  animation: rotate 1s both alternate;
+}
 
-.container_description_prix {
+.container_description {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  row-gap: 10px;
+  margin: 10px;
 }
-.container_description_prix .description-plat {
-  font-size: 14px;
-}
-.container_description_prix .prix {
-  font-size: 14px;
+.container_description .nom-plat {
   font-weight: 400;
 }
-
-.check {
-  display: none;
-  color: transparent;
+.container_description .description-plat {
+  font-size: 14px;
 }
 
-.btn > .check:hover {
+.container_prix {
   display: flex;
-  color: #99e2d0;
+  align-items: flex-end;
+  gap: 10px;
+  transform: translateX(60%);
+}
+.container_prix .prix {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+}
+.container_prix .check {
+  background-color: #99e2d0;
+  height: auto;
+  padding: 20px 20px;
+  color: white;
+  font-size: 1.5rem;
 }
 
 #section_menu .btn-stylé {
@@ -505,31 +539,10 @@ h4 {
   position: relative;
 }
 
-.heart {
-  font-size: 24px;
-  padding: 10px;
-  cursor: pointer;
-  transition: 400ms;
-  position: absolute;
-  right: 0;
-  z-index: 2;
-}
-.heart:hover {
-  color: #9356dc;
-}
-.heart:hover + .heart_full {
-  color: #9356dc;
-  animation: fill 400ms ease-in-out forwards;
-  z-index: 1;
-}
-
-.heart_full {
-  color: transparent;
-  font-size: 24px;
-  margin: 10px;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
+.container_heart {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 /*-- Footer -------------------------------------------------------------------------*/
