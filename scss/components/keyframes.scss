@@ -75,3 +75,23 @@
     transform: translateY(-100%);
   }
 }
+
+// Animations Plats
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(2turn);
+  }
+}
+
+@keyframes checkbox {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

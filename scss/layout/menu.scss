@@ -114,14 +114,15 @@ h6 {
 }
 
 .btn {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
   background-color: white;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.35) 0px 8px 24px;
-  padding: 10px 10px;
   margin: 0;
   font-weight: 100;
   transition: 400ms;
@@ -139,12 +140,23 @@ h6 {
   &:hover {
     transform: scale(1.02);
   }
+  &:hover > .container_prix {
+    animation: checkbox 1s both alternate;
+  }
+  &:hover > .container_prix > .check > .fa-check-circle {
+    animation: rotate 1s both alternate;
+  }
 }
 
-.container_description_prix {
+.container_description {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  row-gap: 10px;
+  margin: 10px;
   .nom-plat {
     font-weight: 400;
   }
@@ -155,13 +167,20 @@ h6 {
 
 .container_prix {
   display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  transform: translateX(60%);
   .prix {
     font-size: 14px;
     font-weight: 400;
+    padding: 10px;
   }
   .check {
     background-color: $color-tertiary;
-    padding: 55px;
+    height: auto;
+    padding: 20px 20px;
+    color: white;
+    font-size: 1.5rem;
   }
 }
 
