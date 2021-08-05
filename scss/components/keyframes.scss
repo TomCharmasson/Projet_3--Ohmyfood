@@ -1,10 +1,10 @@
-// Boutons plats
+// Bouttons Fade In
 
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 10%, 0);
-    transform: translate3d(0, 10%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
   }
   100% {
     opacity: 1;
@@ -15,8 +15,8 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 10%, 0);
-    transform: translate3d(0, 10%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
   }
   100% {
     opacity: 1;
@@ -58,15 +58,6 @@
   }
 }
 
-@keyframes heart-fill {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @keyframes boxmove {
   0% {
     transform: translateY(0);
@@ -76,22 +67,61 @@
   }
 }
 
-// Animations Plats
-
-@keyframes rotate {
+@keyframes heart-fill {
   0% {
-    transform: rotate(0turn);
+    opacity: 0;
   }
   100% {
-    transform: rotate(2turn);
+    opacity: 1;
   }
 }
 
-@keyframes checkbox {
+// Animation du prix
+
+@keyframes choice-in {
   0% {
-    transform: translateX(60%);
+    transform: translateX(1px);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-59px);
+  }
+}
+@keyframes choice-out {
+  0% {
+    transform: translateX(-59px);
+  }
+  100% {
+    transform: translateX(1px);
+  }
+}
+
+// Animation du check
+
+@keyframes turn-in {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+//Animation de la description
+
+@keyframes txt-space-in {
+  0% {
+    width: 80%;
+  }
+  100% {
+    width: 65%;
+  }
+}
+
+@keyframes txt-space-out {
+  0% {
+    width: 65%;
+  }
+  100% {
+    width: 80%;
   }
 }
