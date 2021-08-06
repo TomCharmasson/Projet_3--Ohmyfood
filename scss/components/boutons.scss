@@ -1,0 +1,26 @@
+// Btn-style dans les Titres en page d'accueil
+
+.btn-style {
+  margin: 20px 0;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50px;
+  color: white;
+  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: $background-button;
+  cursor: pointer;
+  transition: 400ms;
+  &:hover {
+    transform: translateY(-0.1em);
+    opacity: 85%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 15px;
+  }
+}
+
+// Btn-style dans les Menus
+
+#section_menu .btn-style {
+  align-self: center;
+  padding: 15px 50px;
+}
