@@ -355,8 +355,7 @@ h3 {
   border: 2px solid white;
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
 }
-
-.fa-utensils {
+.icone_chargement .fa-utensils {
   margin: 0;
   color: white;
 }
