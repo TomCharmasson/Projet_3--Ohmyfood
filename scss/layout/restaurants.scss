@@ -8,17 +8,36 @@ article {
 
 #conteneur_restaurants {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  @include tablet {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  @include mobile {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .restaurant {
+  width: 23%;
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 400ms;
+  @include laptop {
+    width: 45%;
+  }
+  @include tablet {
+    width: 45%;
+  }
+  @include mobile {
+    width: 100%;
+  }
   &:hover {
     transform: scale(1.02);
   }
