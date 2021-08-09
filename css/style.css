@@ -137,6 +137,21 @@ body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
+/* Breakpoints
+
+X-Small	        None	<576px
+Small	        sm	    ≥576px
+Medium	        md	    ≥768px
+Large	        lg  	≥992px
+Extra large	    xl	    ≥1200px
+Extra extra     large	xxl	≥1400px
+
+*/
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
 /*-- Réglage Général ----------------------------------------------------------------*/
 body {
   margin: 0;
@@ -289,17 +304,22 @@ h3 {
 
 #container_bouttons_fonctionnement {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 20px;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+@media screen and (max-width: 600px) {
+  #container_bouttons_fonctionnement {
+    justify-content: space-between;
+    flex-direction: column;
+  }
 }
 
 .bouttons_fonctionnement {
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   margin-left: 11px;
   border: none;
   padding: 25px 20px;
@@ -316,10 +336,12 @@ h3 {
   transform: scale(1.02);
 }
 
-.container_number_boutton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (max-width: 600px) {
+  .container_number_boutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .numbers {
@@ -624,17 +646,46 @@ article {
 
 #conteneur_restaurants {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  #conteneur_restaurants {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 600px) {
+  #conteneur_restaurants {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .restaurant {
+  width: 23%;
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 400ms;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .restaurant {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .restaurant {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .restaurant {
+    width: 100%;
+  }
 }
 .restaurant:hover {
   transform: scale(1.02);
