@@ -11,13 +11,19 @@ main {
 
 #section_menu {
   display: flex;
-  flex-direction: column;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  flex-direction: column;
   top: -30px;
   border-radius: 20px 20px 0 0;
   padding: 20px;
   background-color: rgb(246, 246, 246);
+  @include desktop {
+    margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: rgba(149, 157, 165, 0.35) 0px 8px 24px;
+    border-radius: 20px;
+  }
 }
 
 .container_titre {
@@ -34,11 +40,31 @@ h5 {
   letter-spacing: 1px;
 }
 
-#container_menu {
+.super_container_menu {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 20px;
+  flex-wrap: wrap;
+  @include laptop {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  @include desktop {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.container_menu {
+  width: 30%;
+  @include laptop {
+    width: 45%;
+  }
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    width: 100%;
+  }
 }
 
 h6 {
@@ -60,8 +86,8 @@ h6 {
 
 .container_bouttons {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
   row-gap: 10px;
   margin-top: 5px;
   margin-bottom: 40px;
