@@ -452,7 +452,7 @@ h3 {
   color: white;
 }
 
-#conteneur_restaurants .box {
+.restaurant .box {
   background: linear-gradient(white, rgba(246, 246, 246, 0));
   background: -webkit-linear-gradient(white, rgba(246, 246, 246, 0));
   background: -moz-linear-gradient(white, rgba(246, 246, 246, 0));
