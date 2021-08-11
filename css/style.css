@@ -303,6 +303,7 @@ footer a:hover {
 
 /*-- Section Fonctionnement ---------------------------------------------------------*/
 #section_fonctionnement {
+  position: relative;
   padding: 20px;
   padding-bottom: 60px;
   background-color: white;
@@ -313,9 +314,10 @@ h3 {
 }
 
 #container_bouttons_fonctionnement {
+  position: relative;
   display: flex;
-  justify-content: space-evenly;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 20px;
 }
 @media screen and (min-width: 600px) and (max-width: 768px) {
   #container_bouttons_fonctionnement {
@@ -331,13 +333,13 @@ h3 {
 }
 
 .bouttons_fonctionnement {
-  width: 100%;
   position: relative;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 11px;
   border: none;
+  margin-left: 11px;
   padding: 25px 20px;
   border-radius: 20px;
   background-color: #f6f6f6;
@@ -348,45 +350,42 @@ h3 {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition-duration: 300ms;
 }
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .bouttons_fonctionnement {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .bouttons_fonctionnement {
+    width: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bouttons_fonctionnement {
+    width: auto;
+  }
+}
 .bouttons_fonctionnement:hover {
   transform: scale(1.02);
 }
 
-.bouttons_fonctionnement3 {
-  background-color: rgba(147, 86, 220, 0.2);
-}
-
 .container_number_boutton {
-  width: 100%;
-}
-@media screen and (min-width: 600px) and (max-width: 768px) {
-  .container_number_boutton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 600px) {
-  .container_number_boutton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.numbers {
+  position: absolute;
   padding: 2px 7px;
   border-radius: 50px;
   background-color: #9356dc;
   color: white;
-  position: absolute;
   left: -11px;
 }
 
 .icone_fonctionnement {
   position: absolute;
-  left: 30px;
+  left: 25px;
   color: #666666;
+}
+
+.bouttons_fonctionnement3 {
+  background-color: rgba(147, 86, 220, 0.2);
 }
 
 .bouttons_fonctionnement3 .icone_fonctionnement {
@@ -419,6 +418,7 @@ h3 {
 
 #conteneur_restaurants .box {
   background: -webkit-linear-gradient(white, transparent);
+  background: -moz-linear-gradient(white, transparent);
   background: linear-gradient(white, transparent);
 }
 
@@ -433,6 +433,8 @@ h3 {
   z-index: 1;
   position: relative;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
+  background: linear-gradient(#9356dc, #ff79da);
+  background: -moz-linear-gradient(#9356dc, #ff79da);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -444,6 +446,8 @@ h3 {
   z-index: 2;
   position: absolute;
   background: -webkit-linear-gradient(#f6f6f6, transparent);
+  background: linear-gradient(#f6f6f6, transparent);
+  background: -moz-linear-gradient(#f6f6f6, transparent);
   overflow: hidden;
   right: 0;
   height: 26px;
@@ -722,6 +726,12 @@ article {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 20px;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #conteneur_restaurants {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
 }
 @media screen and (min-width: 600px) and (max-width: 768px) {
   #conteneur_restaurants {

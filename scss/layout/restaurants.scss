@@ -11,6 +11,10 @@ article {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 20px;
+  @include laptop {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
   @include tablet {
     justify-content: space-evenly;
     flex-wrap: wrap;
