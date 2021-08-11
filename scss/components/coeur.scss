@@ -2,6 +2,7 @@
 
 #conteneur_restaurants .box {
   background: -webkit-linear-gradient(white, transparent);
+  background: -moz-linear-gradient(white, transparent);
   background: linear-gradient(white, transparent);
 }
 
@@ -18,6 +19,8 @@
   z-index: 1;
   position: relative;
   background: -webkit-linear-gradient($color-primary, $color-secondary);
+  background: linear-gradient($color-primary, $color-secondary);
+  background: -moz-linear-gradient($color-primary, $color-secondary);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -29,6 +32,8 @@
   z-index: 2;
   position: absolute;
   background: -webkit-linear-gradient(rgb(246, 246, 246), transparent);
+  background: linear-gradient(rgb(246, 246, 246), transparent);
+  background: -moz-linear-gradient(rgb(246, 246, 246), transparent);
   overflow: hidden;
   right: 0;
   height: 26px;

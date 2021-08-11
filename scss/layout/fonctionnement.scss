@@ -1,6 +1,7 @@
 /*-- Section Fonctionnement ---------------------------------------------------------*/
 
 #section_fonctionnement {
+  position: relative;
   padding: 20px;
   padding-bottom: 60px;
   background-color: white;
@@ -11,10 +12,10 @@ h3 {
 }
 
 #container_bouttons_fonctionnement {
+  position: relative;
   display: flex;
-  justify-content: space-evenly;
-  gap: 40px;
-
+  justify-content: space-between;
+  gap: 20px;
   @include tablet {
     justify-content: space-between;
     flex-direction: column;
@@ -26,13 +27,13 @@ h3 {
 }
 
 .bouttons_fonctionnement {
-  width: 100%;
   position: relative;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 11px;
   border: none;
+  margin-left: 11px;
   padding: 25px 20px;
   border-radius: 20px;
   background-color: rgb(246, 246, 246);
@@ -42,42 +43,37 @@ h3 {
   font-weight: 500;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition-duration: 300ms;
+  @include laptop {
+    width: 30%;
+  }
+  @include tablet {
+    width: auto;
+  }
+  @include mobile {
+    width: auto;
+  }
   &:hover {
     transform: scale(1.02);
   }
 }
 
-.bouttons_fonctionnement3 {
-  background-color: rgba($color-primary, 0.2);
-}
-
 .container_number_boutton {
-  width: 100%;
-  @include tablet {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  @include mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.numbers {
+  position: absolute;
   padding: 2px 7px;
   border-radius: 50px;
   background-color: $color-primary;
   color: white;
-  position: absolute;
   left: -11px;
 }
 
 .icone_fonctionnement {
   position: absolute;
-  left: 30px;
+  left: 25px;
   color: lighten(black, 40%);
+}
+
+.bouttons_fonctionnement3 {
+  background-color: rgba($color-primary, 0.2);
 }
 
 .bouttons_fonctionnement3 .icone_fonctionnement {
