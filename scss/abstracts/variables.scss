@@ -16,3 +16,12 @@ $background-button: -webkit-linear-gradient(
 
 $btn-anim-dur: 1600ms;
 $btn-anim-delay: $btn-anim-dur / 10;
+
+// Map Breakpoints
+
+$breakpoints: (
+  mobile: 600px,
+  tablet: 768px,
+  laptop: 992px,
+  desktop: 1200px,
+);

@@ -9,7 +9,7 @@ article {
 #conteneur_restaurants {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 20px;
   @include laptop {
     justify-content: space-evenly;
@@ -27,12 +27,15 @@ article {
 }
 
 .restaurant {
-  width: 23%;
+  position: relative;
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: 400ms;
+  @include desktop {
+    width: 23%;
+  }
   @include laptop {
     width: 45%;
   }
