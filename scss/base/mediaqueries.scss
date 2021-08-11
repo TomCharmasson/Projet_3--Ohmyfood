@@ -10,43 +10,7 @@ Extra extra     large	xxl	≥1400px
 */
 
 /* Extra small devices (phones, 600px and down) */
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
-
 /* Medium devices (landscape tablets, 768px and up) */
-
 /* Large devices (laptops/desktops, 992px and up) */
-
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-
-// Map Breakpoints
-
-$breakpoints: (
-  mobile: 600px,
-  tablet: 768px,
-  laptop: 992px,
-  desktop: 1200px,
-);
-
-// Mixins
-
-@mixin mobile {
-  @media screen and (max-width: map-get($breakpoints, mobile)) {
-    @content;
-  }
-}
-@mixin tablet {
-  @media screen and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)) {
-    @content;
-  }
-}
-@mixin laptop {
-  @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptop)) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media screen and (min-width: map-get($breakpoints, laptop)) {
-    @content;
-  }
-}

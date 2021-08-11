@@ -1,9 +1,9 @@
 // Pour la page d'accueil
 
 #conteneur_restaurants .box {
-  background: -webkit-linear-gradient(white, transparent);
-  background: -moz-linear-gradient(white, transparent);
-  background: linear-gradient(white, transparent);
+  background: linear-gradient(white, rgba(246, 246, 246, 0));
+  background: -webkit-linear-gradient(white, rgba(246, 246, 246, 0));
+  background: -moz-linear-gradient(white, rgba(246, 246, 246, 0));
 }
 
 .container_heart {
@@ -15,38 +15,38 @@
 // Pour les menus
 
 .full_heart {
-  font-size: 26px;
   z-index: 1;
-  position: relative;
-  background: -webkit-linear-gradient($color-primary, $color-secondary);
-  background: linear-gradient($color-primary, $color-secondary);
-  background: -moz-linear-gradient($color-primary, $color-secondary);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
+  position: absolute;
+  right: 0;
+  font-size: 26px;
+  height: 26px;
+  width: 26px;
   margin-right: 15px;
+  opacity: 0;
+  @include gradient-text("linear-gradient(to top,#9356dc, #ff79da)", "light");
 }
 
 .box {
   z-index: 2;
   position: absolute;
-  background: -webkit-linear-gradient(rgb(246, 246, 246), transparent);
-  background: linear-gradient(rgb(246, 246, 246), transparent);
-  background: -moz-linear-gradient(rgb(246, 246, 246), transparent);
-  overflow: hidden;
   right: 0;
   height: 26px;
   width: 26px;
   margin-right: 15px;
+  background: linear-gradient(rgb(246, 246, 246), rgba(246, 246, 246, 0));
+  background: -webkit-linear-gradient(rgba(246, 246, 246, 0));
+  background: -moz-linear-gradient(rgb(246, 246, 246), rgba(246, 246, 246, 0));
+  overflow: hidden;
 }
 
 .empty_heart {
-  font-size: 26px;
   z-index: 3;
   position: absolute;
   right: 0;
+  height: 26px;
+  width: 26px;
   margin-right: 15px;
+  font-size: 26px;
   cursor: pointer;
   &:hover {
     animation: heart-fade 800ms both;
