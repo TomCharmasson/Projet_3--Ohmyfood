@@ -1,14 +1,4 @@
 @charset "UTF-8";
-/* Breakpoints
-
-X-Small	        None	<576px
-Small	        sm	    ≥576px
-Medium	        md	    ≥768px
-Large	        lg  	≥992px
-Extra large	    xl	    ≥1200px
-Extra extra     large	xxl	≥1400px
-
-*/
 /* 
   .gradient1 {
     @include gradient-text(
@@ -41,7 +31,7 @@ Extra extra     large	xxl	≥1400px
 @keyframes morph {
   0% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-    background: linear-gradient(45deg, #9356dc 0%, #ff79da 100%);
+    background: linear-gradient(45deg, #6f56dc 0%, #ff79da 100%);
     transform: scale(1);
   }
   50% {
@@ -50,7 +40,7 @@ Extra extra     large	xxl	≥1400px
   }
   100% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-    background: linear-gradient(45deg, #9356dc 0%, #ff79da 100%);
+    background: linear-gradient(45deg, #6f56dc 0%, #ff79da 100%);
     transform: scale(1);
   }
 }
@@ -266,7 +256,7 @@ footer h5 {
   width: fit-content;
   transition: 200ms;
   color: white;
-  border: 0px solid #9356dc;
+  border: 0px solid #6f56dc;
   cursor: pointer;
 }
 
@@ -284,11 +274,11 @@ footer a {
   width: fit-content;
   transition: 200ms;
   color: white;
-  border: 0px solid #9356dc;
+  border: 0px solid #6f56dc;
   cursor: pointer;
 }
 footer a:hover {
-  border-left: 3px solid #9356dc;
+  border-left: 3px solid #6f56dc;
   padding-left: 10px;
 }
 
@@ -409,7 +399,7 @@ h3 {
   position: absolute;
   padding: 2px 7px;
   border-radius: 50px;
-  background-color: #9356dc;
+  background-color: #6f56dc;
   color: white;
   left: -11px;
 }
@@ -421,11 +411,11 @@ h3 {
 }
 
 .bouttons_fonctionnement3 {
-  background-color: rgba(147, 86, 220, 0.2);
+  background-color: rgba(111, 86, 220, 0.2);
 }
 
 .bouttons_fonctionnement3 .icone_fonctionnement {
-  color: #9356dc;
+  color: #6f56dc;
 }
 
 .loader {
@@ -467,12 +457,12 @@ h3 {
 .full_heart {
   z-index: 1;
   position: absolute;
-  right: 0;
   font-size: 26px;
+  opacity: 0;
+  right: 0;
   height: 26px;
   width: 26px;
   margin-right: 15px;
-  opacity: 0;
 }
 @supports (mix-blend-mode: lighten) {
   .full_heart {
@@ -501,25 +491,25 @@ h3 {
 .box {
   z-index: 2;
   position: absolute;
-  right: 0;
-  height: 26px;
-  width: 26px;
-  margin-right: 15px;
   background: linear-gradient(#f6f6f6, rgba(246, 246, 246, 0));
   background: -webkit-linear-gradient(rgba(246, 246, 246, 0));
   background: -moz-linear-gradient(#f6f6f6, rgba(246, 246, 246, 0));
   overflow: hidden;
+  right: 0;
+  height: 26px;
+  width: 26px;
+  margin-right: 15px;
 }
 
 .empty_heart {
   z-index: 3;
   position: absolute;
+  font-size: 26px;
+  cursor: pointer;
   right: 0;
   height: 26px;
   width: 26px;
   margin-right: 15px;
-  font-size: 26px;
-  cursor: pointer;
 }
 .empty_heart:hover {
   animation: heart-fade 800ms both;
@@ -539,7 +529,7 @@ h3 {
   color: white;
   font-size: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background: -webkit-linear-gradient(top, #ff79da, #9356dc);
+  background: -webkit-linear-gradient(top, #ff79da, #6f56dc);
   cursor: pointer;
   transition: 400ms;
 }
