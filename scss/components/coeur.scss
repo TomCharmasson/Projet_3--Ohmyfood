@@ -17,37 +17,28 @@
 .full_heart {
   z-index: 1;
   position: absolute;
-  right: 0;
   font-size: 26px;
-  height: 26px;
-  width: 26px;
-  margin-right: 15px;
   opacity: 0;
+  @include dispositon-coeurs;
   @include gradient-text("linear-gradient(to top,#9356dc, #ff79da)", "light");
 }
 
 .box {
   z-index: 2;
   position: absolute;
-  right: 0;
-  height: 26px;
-  width: 26px;
-  margin-right: 15px;
   background: linear-gradient(rgb(246, 246, 246), rgba(246, 246, 246, 0));
   background: -webkit-linear-gradient(rgba(246, 246, 246, 0));
   background: -moz-linear-gradient(rgb(246, 246, 246), rgba(246, 246, 246, 0));
   overflow: hidden;
+  @include dispositon-coeurs;
 }
 
 .empty_heart {
   z-index: 3;
   position: absolute;
-  right: 0;
-  height: 26px;
-  width: 26px;
-  margin-right: 15px;
   font-size: 26px;
   cursor: pointer;
+  @include dispositon-coeurs;
   &:hover {
     animation: heart-fade 800ms both;
   }
