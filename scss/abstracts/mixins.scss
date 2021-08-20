@@ -21,6 +21,15 @@
   }
 }
 
+// Mixin placement coeurs
+
+@mixin dispositon-coeurs {
+  right: 0;
+  height: 26px;
+  width: 26px;
+  margin-right: 15px;
+}
+
 // Gradient text
 
 @mixin gradient-text($gradient, $bg: "light") {
@@ -59,15 +68,6 @@
       }
     }
   }
-}
-
-// Mixin placement coeurs
-
-@mixin dispositon-coeurs {
-  right: 0;
-  height: 26px;
-  width: 26px;
-  margin-right: 15px;
 }
 
 // Exemples a ajouté a l'élément
